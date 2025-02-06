@@ -1,0 +1,16 @@
+Informações analisáveis no Portainer:
+
+Containers: Visualizar todos os containers em execução, status, logs e stats.
+Volumes: Ver os volumes criados e a utilização de espaço.
+Networks: Gerenciar redes criadas e conectadas aos containers.
+Imagens: Visualizar imagens disponíveis localmente e fazer pull de novas imagens.
+Logs: Acompanhar logs de execução dos containers em tempo real.
+Vantagens do Portainer sobre o terminal:
+
+Interface gráfica amigável e fácil de usar.
+Permite gerenciar containers, volumes e redes de forma visual e intuitiva.
+A visualização de logs e status dos containers é facilitada.
+Desvantagens:
+
+Pode consumir mais recursos do sistema em comparação com o terminal.
+Menos flexível do que o uso do terminal em alguns casos avançados.

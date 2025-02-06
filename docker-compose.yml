@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8050:8050"
+    networks:
+      - webnet
+
+  db:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - SA_PASSWORD=A_Sua_Password
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    networks:
+      - webnet
+    volumes:
+      - dbdata:/var/opt/mssql
+
+volumes:
+  dbdata:
+
+networks:
+  webnet:
+    driver: bridge
