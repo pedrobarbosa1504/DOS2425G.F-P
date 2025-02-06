@@ -1,0 +1,25 @@
+Foi necessárioinstalar o seguinte comando:  dotnet add package Swashbuckle.AspNetCore
+
+
+A implementação foi realizada utilizando o ASP.NET Core, com os controladores UsersController e ProjectsController.
+
+Endpoints Implementados
+________ Usuários (UsersController)
+GET /api/users: Retorna a lista de usuários.
+GET /api/users/{id}: Retorna um usuário pelo ID.
+POST /api/users: Cria um novo usuário.
+PUT /api/users/{id}: Atualiza um usuário existente.
+DELETE /api/users/{id}: Remove um usuário pelo ID.
+________ Projetos (ProjectsController)
+GET /api/projects: Retorna a lista de projetos.
+GET /api/projects/{id}: Retorna um projeto pelo ID.
+POST /api/projects: Cria um novo projeto.
+PUT /api/projects/{id}: Atualiza um projeto existente.
+DELETE /api/projects/{id}: Remove um projeto pelo ID.
+Problemas Encontrados
+________ Erros de Compilação (CS0246)
+Durante a tentativa de compilação, ocorreram erros relacionados à falta das classes User e Project. O erro CS0246 indicava que o compilador não conseguiu encontrar as definições dessas classes.
+
+Soluções:
+Definir as classes: As classes User e Project foram criadas com as propriedades básicas, como Id, UserName, Email, Role para User e Id, Name, Description, StartDate, EndDate para Project.
+Importar os namespaces: Foi necessário adicionar os using adequados nos controladores para importar as classes corretamente.

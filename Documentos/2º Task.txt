@@ -7,7 +7,7 @@ PUT /api/tasks/{id} – Atualização de tarefas existentes.
 DELETE /api/tasks/{id} – Exclusão de tarefas.
 Estes endpoints seguem os padrões REST, utilizando métodos HTTP apropriados (GET, POST, PUT, DELETE).
 
-2.3 Atualizações no Modelo
+Atualizações no Modelo
 O modelo TaskItem foi expandido para incluir os campos:
 
 Priority (string): Define a prioridade da tarefa (ex.: Alta, Média, Baixa).
