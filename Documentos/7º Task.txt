@@ -1,0 +1,106 @@
+No primeiro passo do exercício, foi necessário configurar o DbContext para a comunicação com o banco de dados SQL Server.
+
+Código do DbContext:
+
+public class ApplicationDbContext : DbContext
+{
+    public DbSet<User> Users { get; set; }
+    public DbSet<Project> Projects { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer(@"Server=MyServer;Database=DbName;User Id=MyUser;Password=MyPassword");
+    }
+}
+
+
+Explicação:
+
+DbSet<User>: Define uma coleção de usuários que serão armazenados no banco de dados.
+DbSet<Project>: Define uma coleção de projetos.
+OnConfiguring: Método usado para configurar o banco de dados a ser utilizado. No caso, foi usado o UseSqlServer para especificar o SQL Server, com a connection string apontando para o servidor e banco de dados desejados.
+
+Escolhas:
+A escolha do SQL Server foi feita com base no exercício que exigia a utilização dessa tecnologia para persistência de dados.
+A string de conexão foi configurada utilizando o formato padrão para SQL Server, adaptado com o servidor e credenciais de acesso.
+
+
+
+_______Adicionar Models ao DbSet
+Adicionei as classes User e Project como modelos para persistência no banco de dados. Essas classes representam as tabelas do banco de dados que serão gerenciadas pelo Entity Framework.
+
+Exemplo de Modelo User:
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
+
+_________ Geração e Aplicação das Migrations
+Para gerar e aplicar a migration, utilizei o comando dotnet ef migrations add e dotnet ef database update.
+
+Comandos Executados:
+Gerar a migration:
+
+
+dotnet ef migrations add InitialCreate
+Esse comando cria a migration chamada InitialCreate, que define as operações necessárias para criar o banco de dados a partir das entidades configuradas.
+
+Atualizar o banco de dados com as alterações:
+
+
+dotnet ef database update
+Este comando aplica as migrations e cria as tabelas no banco de dados.
+
+Explicação:
+O comando dotnet ef migrations add cria a migração que contém as instruções para criar as tabelas e as relações entre elas.
+O comando dotnet ef database update é responsável por aplicar as migrations ao banco de dados, criando fisicamente as tabelas no servidor de banco de dados.
+Escolhas:
+Usei o comando dotnet ef migrations add porque o projeto é baseado em .NET Core e requer o uso de migrations para atualizar o banco de dados.
+O comando dotnet ef database update foi utilizado para aplicar a migration e atualizar o banco de dados diretamente.
+
+
+
+
+
+________Verificação das Tabelas no SQL Server
+Após a aplicação das migrations, foi possível verificar as tabelas criadas no SQL Server utilizando o SQL Server Management Studio (SSMS). As tabelas Users e Projects foram criadas com os campos definidos nos modelos User e Project.
+
+Comando SQL para verificar as tabelas:
+
+SELECT * FROM INFORMATION_SCHEMA.TABLES;
+Este comando exibe as tabelas do banco de dados, permitindo a validação das tabelas criadas pelo Entity Framework.
+
+__________Adicionar e Remover Dados via API
+Adicionei dois endpoints simples na API para adicionar e remover dados.
+
+Código para Adicionar um Usuário:
+[HttpPost]
+public IActionResult AddUser([FromBody] User user)
+{
+    _context.Users.Add(user);
+    _context.SaveChanges();
+    return Ok(user);
+}
+
+Código para Remover um Usuário:
+
+
+[HttpDelete("{id}")]
+public IActionResult DeleteUser(int id)
+{
+    var user = _context.Users.Find(id);
+    if (user == null)
+    {
+        return NotFound();
+    }
+
+    _context.Users.Remove(user);
+    _context.SaveChanges();
+    return NoContent();
+}
+
+Explicação:
+O primeiro endpoint permite adicionar um novo usuário ao banco de dados.
+O segundo endpoint permite remover um usuário, verificando se ele existe antes de proceder com a remoção.
