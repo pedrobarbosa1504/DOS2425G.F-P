@@ -1,0 +1,21 @@
+Criação do Dockerfile:
+
+A primeira etapa foi criar um arquivo Dockerfile na raiz do projeto.
+
+O Dockerfile foi configurado com a imagem base do SDK do .NET 8.0, e o processo foi dividido em duas fases:
+Build: Utilizando o SDK para restaurar dependências e publicar a aplicação.
+Final: Usando uma imagem mais leve (aspnet:8.0) e copiando os arquivos compilados.
+Configuração do Dockerfile:
+
+O arquivo .csproj foi copiado para o diretório de trabalho no container, seguido da execução do comando dotnet restore para restaurar as dependências.
+O comando dotnet publish foi utilizado para gerar os arquivos de release e prepará-los para execução no ambiente de produção.
+A porta 8050 foi exposta, pois a aplicação irá rodar nessa porta.
+Build da Imagem:
+
+O comando docker build -t seu-projeto . foi utilizado para construir a imagem a partir do Dockerfile.
+Execução do Docker Container:
+
+O comando docker run -d -p 8050:8050 seu-projeto foi utilizado para executar o container na porta 8050.
+Testando a Aplicação:
+
+Após rodar o container, a API foi acessada pela URL http://localhost:8050.
