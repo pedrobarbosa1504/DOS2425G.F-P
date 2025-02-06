@@ -1,0 +1,56 @@
+_______Para adicionar o Swagger ao meu projeto .NET Core, segui as seguintes etapas:
+
+Como na etapa anterior ja tinha instalado o pacote necessario nao foi necessario faze-lo outra vez mas deixo aqui o comando utilizado para instalar:
+
+dotnet add package Swashbuckle.AspNetCore
+Esse pacote permite integrar o Swagger ao .NET Core.
+
+Configuração no Program.cs: No arquivo Program.cs, adicionei as configurações necessárias para ativar o Swagger e gerar a documentação da API.
+
+Adicionei a configuração do Swagger no builder.Services:
+
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+Configuração no pipeline de middleware para habilitar o Swagger e o Swagger UI:
+
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+Com essas mudanças, a documentação interativa da API estará disponível no Swagger UI, que pode ser acessada no navegador para testar os endpoints.
+
+_______ Onde foi necessário alterar no código
+As alterações no código foram feitas principalmente no arquivo Program.cs:
+
+Adicionar a configuração de Swagger nas dependências do serviço: Adicionei os seguintes comandos dentro do builder.Services:
+
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+Configuração do Swagger no pipeline da aplicação: No pipeline de middleware, dentro da condição de ambiente de desenvolvimento, inseri:
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+Essas alterações garantem que a API seja documentada automaticamente e a interface do Swagger UI esteja disponível apenas em ambientes de desenvolvimento.
+
+________ Vantagens da utilização do Swagger
+A utilização do Swagger em projetos de API traz várias vantagens importantes:
+
+Documentação Automática: O Swagger gera automaticamente uma documentação interativa para os endpoints da API. Isso facilita a comunicação entre desenvolvedores e permite que a API seja facilmente compreendida e testada.
+
+Facilidade no Teste da API: O Swagger UI oferece uma interface visual que permite aos desenvolvedores e testers interagir com a API diretamente no navegador, sem a necessidade de ferramentas externas como Postman.
+
+Redução de Erros: A documentação gerada pelo Swagger ajuda a reduzir erros ao fornecer uma descrição clara sobre os endpoints, parâmetros e tipos de retorno. Isso torna o processo de integração e testes mais eficiente.
+
+Melhoria na Manutenção do Código: Com a documentação atualizada automaticamente, torna-se mais fácil manter o código e identificar qualquer alteração necessária nos endpoints.
+
+Padrão de Mercado: O Swagger é amplamente utilizado na indústria, sendo um padrão para a documentação de APIs. Isso facilita a adoção de boas práticas e a integração com outras ferramentas.
