@@ -1,0 +1,7 @@
+1º Task - Criar Brancos
+
+
+Para a realização este projeto decidi criar cinco branch's( feature/CommentsController, feature/ProjectController, feature/UserController, deves).
+
+O repositório ficou divido desta maneira devido ao que é pedido no primeiro exercício pratico, e também para uma melhor organização do projeto
+
