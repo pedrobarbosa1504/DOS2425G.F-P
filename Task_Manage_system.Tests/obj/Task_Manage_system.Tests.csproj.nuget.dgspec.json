@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/TMS.csproj": {}
+    "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Manage_system.Tests/Task_Manage_system.Tests.csproj": {}
   },
   "projects": {
-    "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/TMS.csproj": {
+    "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Manage_system.Tests/Task_Manage_system.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/TMS.csproj",
-        "projectName": "TMS",
-        "projectPath": "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/TMS.csproj",
+        "projectUniqueName": "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Manage_system.Tests/Task_Manage_system.Tests.csproj",
+        "projectName": "Task_Manage_system.Tests",
+        "projectPath": "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Manage_system.Tests/Task_Manage_system.Tests.csproj",
         "packagesPath": "/Users/pedrobarbosa/.nuget/packages/",
-        "outputPath": "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/obj/",
+        "outputPath": "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Manage_system.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/pedrobarbosa/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -41,20 +41,28 @@
         "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[9.0.1, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[7.2.0, )"
+              "version": "[17.12.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[3.0.1, )"
             }
           },
           "imports": [
@@ -68,24 +76,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.12, 8.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.osx-arm64",
-              "version": "[8.0.12, 8.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.12, 8.0.12]"
-            }
-          ],
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

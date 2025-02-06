@@ -68,3 +68,15 @@
 /Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/obj/Debug/net8.0/TMS.pdb
 /Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/obj/Debug/net8.0/TMS.genruntimeconfig.cache
 /Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/obj/Debug/net8.0/ref/TMS.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll

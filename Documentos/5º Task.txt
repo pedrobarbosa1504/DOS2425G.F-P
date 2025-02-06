@@ -1,0 +1,100 @@
+
+
+
+
+:__________preparação do Ambiente
+O exercício utiliza Vagrant para criar uma máquina virtual que execute o SQL Server.
+Se o VirtualBox for utilizado como motor de virtualização, o Vagrant file será configurado para usar o SQL Server.
+Caso se utilize Hyper-V (para Windows), não será necessário seguir as etapas para o VirtualBox.
+
+
+_______ Criação do Vagrantfile
+O arquivo Vagrantfile foi criado para automatizar a criação da máquina virtual e a configuração do banco de dados SQL Server.
+Conteúdo do Vagrantfile:
+
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "gusztavvargadr/sql-server"
+  config.vm.network "private_network", type: "dhcp"
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+  end
+end
+
+
+Passos adicionais:
+Definir a imagem Vagrant (gusztavvargadr/sql-server) que configura o SQL Server.
+
+Configurar o uso de 2GB de memória RAM para a máquina virtual.
+Permitir a conexão à porta do SQL Server para acesso externo.
+
+
+
+________ Criação do Banco de Dados em Memória para Testes
+Para os testes unitários, configuramos o banco de dados em memória utilizando o Entity Framework.
+
+Código para o contexto de dados em memória:
+
+public class ApplicationDbContext : DbContext
+{
+    public DbSet<User> Users { get; set; }
+    public DbSet<Project> Projects { get; set; }
+
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+    { }
+}
+
+Contexto de dados em memória: Criado utilizando o UseInMemoryDatabase.
+Configuração do banco de dados em memória para testes é feita ao instanciar o contexto com TestDb.
+
+__________ Implementação dos Testes Unitários
+
+A biblioteca XUnit foi usada para criar os testes unitários para cada endpoint.
+
+Exemplo de teste unitário para o UserController:
+
+public class UserControllerTests
+{
+    private readonly UserController _controller;
+
+    public UserControllerTests()
+    {
+        var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                        .UseInMemoryDatabase(databaseName: "TestDb")
+                        .Options;
+
+        var context = new ApplicationDbContext(options);
+        _controller = new UserController(context);
+    }
+
+    [Fact]
+    public void GetUsers_ReturnsOkResult()
+    {
+        var result = _controller.GetUsers();
+        Assert.IsType<OkObjectResult>(result);
+    }
+}
+
+Objetivo do teste: Garantir que o método GetUsers retorna o tipo correto (OkObjectResult).
+O teste é realizado com um banco de dados em memória para simular a leitura de dados e verificar se o comportamento do controller está correto.
+
+_________ Execução dos Testes
+
+Os testes foram executados utilizando o comando:
+dotnet test
+
+
+O XUnit garante que cada método do controller seja testado de forma isolada, sem dependências externas.
+Vantagens da Utilização do Swagger
+
+
+Documentação Automática: O Swagger gera uma documentação da API automaticamente, o que facilita a visualização e a interação com os endpoints da aplicação.
+Testes Interativos: O Swagger UI permite testar os endpoints diretamente pela interface gráfica.
+Facilidade de Integração: Com o Swagger configurado, outros desenvolvedores ou sistemas podem facilmente integrar a API devido à documentação clara.
+Alterações no Código
+
+
+Vagrantfile: Adição de configurações de rede e memória para a máquina virtual.
+ApplicationDbContext: Implementação de um contexto de banco de dados em memória utilizando o UseInMemoryDatabase.
+Testes Unitários: Criação de testes unitários utilizando o XUnit para simular interações com a base de dados em memória e garantir o comportamento correto dos endpoints.
