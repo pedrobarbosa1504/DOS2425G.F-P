@@ -1,0 +1,17 @@
+Documentação das Configurações de Rede no Vagrant
+
+1. Configuração 1: Rede NAT
+   - Justificativa: Usamos a rede NAT para permitir que a VM tenha acesso à internet, mas sem estar acessível diretamente pelo host. Isso é útil quando a VM precisa acessar recursos da web, mas sem expor a máquina à rede local.
+
+2. Configuração 2: Rede Privada
+   - Justificativa: A rede privada entre VMs permite que elas se comuniquem entre si sem expor a rede local ou a internet. Ideal para testes isolados entre máquinas.
+
+3. Configuração 3: Acesso à Internet Sem Acesso pelo Host
+   - Justificativa: A rede "forwarded_port" permite à VM acessar a internet, mas sem ser acessível pelo host. Isso ajuda a isolar a VM da rede local enquanto ainda permite o acesso à internet.
+
+4. Configuração 4: Acesso à Internet e Comunicação com Outras VMs
+   - Justificativa: A rede privada entre as VMs e o acesso à internet permite que as VMs se comuniquem entre si e acessem a web, mas sem expor o host ou a rede local.
+
+Respostas às Questões:
+1. A conexão mais segura para trabalho em redes internas seria a rede privada configurada entre as máquinas virtuais.
+2. Para a VM de desenvolvimento sem acesso à rede, utilizaria uma rede privada sem conexão externa.
