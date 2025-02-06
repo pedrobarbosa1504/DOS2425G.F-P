@@ -1,0 +1,15 @@
+No TasksController, foram criados os seguintes endpoints para atender aos requisitos:
+
+GET /api/tasks – Retorna todas as tarefas.
+GET /api/tasks/{id} – Retorna uma tarefa específica pelo ID.
+POST /api/tasks – Criação de novas tarefas.
+PUT /api/tasks/{id} – Atualização de tarefas existentes.
+DELETE /api/tasks/{id} – Exclusão de tarefas.
+Estes endpoints seguem os padrões REST, utilizando métodos HTTP apropriados (GET, POST, PUT, DELETE).
+
+2.3 Atualizações no Modelo
+O modelo TaskItem foi expandido para incluir os campos:
+
+Priority (string): Define a prioridade da tarefa (ex.: Alta, Média, Baixa).
+Assignee (User): Relaciona a tarefa a um utilizador responsável.
+O modelo User foi criado para armazenar informações dos utilizadores, permitindo futuras integrações com o UsersController.

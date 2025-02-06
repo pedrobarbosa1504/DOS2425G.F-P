@@ -460,19 +460,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/damaral/.nuget/packages/": {}
+    "/Users/pedrobarbosa/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/damaral/ISEP/Inicial/Task_Management_System/TMS/TMS.csproj",
+      "projectUniqueName": "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/TMS.csproj",
       "projectName": "TMS",
-      "projectPath": "/Users/damaral/ISEP/Inicial/Task_Management_System/TMS/TMS.csproj",
-      "packagesPath": "/Users/damaral/.nuget/packages/",
-      "outputPath": "/Users/damaral/ISEP/Inicial/Task_Management_System/TMS/obj/",
+      "projectPath": "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/TMS.csproj",
+      "packagesPath": "/Users/pedrobarbosa/.nuget/packages/",
+      "outputPath": "/Users/pedrobarbosa/Desktop/DOS2425G-F-P/Task_Management_System/TMS/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/damaral/.nuget/NuGet/NuGet.Config"
+        "/Users/pedrobarbosa/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -490,7 +490,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -516,6 +522,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.12, 8.0.12]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-arm64",
+            "version": "[8.0.12, 8.0.12]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.12, 8.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -524,7 +544,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/damaral/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
